@@ -11,6 +11,15 @@ public class MobilePhone {
         this.myContacts = new ArrayList<Contact>();
     }
 
+    public void printContacts() {
+        System.out.println("Contact list:");
+        for (int i = 0; i < myContacts.size(); i++) {
+            System.out.println((i + 1) + ". " +
+                        this.myContacts.get(i).getName() + " -> " +
+                        this.myContacts.get(i).getPhoneNumber());
+        }
+    }
+
     public boolean addContact(Contact contact) {
         if (findContact(contact.getName()) >= 0) {
             System.out.println("Contact is already on file.");
