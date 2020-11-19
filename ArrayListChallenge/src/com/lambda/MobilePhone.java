@@ -34,6 +34,10 @@ public class MobilePhone {
         if (foundPosition < 0) {
             System.out.println(oldContact.getName() + " was not found.");
             return false;
+        } else if (findContact(newContact.getName()) != -1){
+            System.out.println("Contact " + newContact.getName() +
+                            " already exists. New name must be unique.");
+            return false;
         }
         this.myContacts.set(foundPosition, newContact);
         System.out.println(oldContact.getName() + " was replaced with " + newContact.getName());
@@ -68,6 +72,14 @@ public class MobilePhone {
     public String queryContact(Contact contact) {
         if (findContact(contact) >= 0) {
             return contact.getName();
+        }
+        return null;
+    }
+
+    public Contact queryContact(String name) {
+        int position = findContact(name);
+        if (position >= 0) {
+            return this.myContacts.get(position);
         }
         return null;
     }
