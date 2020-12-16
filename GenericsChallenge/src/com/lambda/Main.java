@@ -15,7 +15,7 @@ public class Main {
         buffalo.matchResult(kc, 3, 1);
         buffalo.matchResult(oakland, 3, 8);
         oakland.matchResult(kc,2, 1);
-        
+
         footballLeague.add(seahawks);
         footballLeague.add(oakland);
         footballLeague.add(buffalo);
