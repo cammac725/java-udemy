@@ -37,4 +37,9 @@ public class Location {
     public Map<String, Integer> getExits() {
         return new HashMap<String, Integer>(exits);
     }
+
+    // add this method back as protected, not public
+    protected void addExit(String direction, int location) {
+        exits.put(direction, location);
+    }
 }
